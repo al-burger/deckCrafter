@@ -116,7 +116,6 @@ export default {
   methods: {
     addCard(card){
       this.$emit('addCardEvent', card);
-      console.log(card.cost);
       if(card.cost == 3) {
         this.addCounterCost();
       }

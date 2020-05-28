@@ -14,14 +14,7 @@
   export default {
     name: 'deckProgressBar',
     props: {
-      totalValueOf1: Number,
-      totalValueOf2: Number,
-      totalValueOf3: Number,
-      totalValueOf4: Number,
-      totalValueOf5: Number,
-      totalValueOf6: Number,
-      totalValueOf7: Number,
-      totalValueOf8: Number,
+      valueOfCards: Array
     },
      data() {
       return {
@@ -39,10 +32,10 @@
     },
     methods: {
       updateProgressBar() {
+        console.log(this.valueOfCards)
         for (var i = 0; i < this.bars.length; i++) {
-          var value = this.totalValueOf2;
-            this.bars[1].value = value *10;
-            console.log(value);
+          var percentValue = this.valueOfCards[i].quantity *10;
+          this.bars[i].value = percentValue;
         }
       }
     },
