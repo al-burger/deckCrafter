@@ -25,13 +25,7 @@
             >{{ totalCard }} / 10</div>
             <b-button v-if="this.card.length > 0" @click="removeDeck()">Supprimer tout</b-button>
             <div v-if="this.card.length === 10">Le deck est plein !</div>
-            <div v-for="(valueOfCard, index) in valueOfCards" :key="index">
-              <div
-                v-if="valueOfCard.quantity > 0"
-              >Nombre de carte qui valent {{valueOfCard.cost}} : {{valueOfCard.quantity}}</div>
-            </div>
-            <b-button @click="countValue()">Compter</b-button>
-            <deckProgressBar :valueOfCards="valueOfCards" />
+            <deckProgressBar :card="card" />
           </b-col>
         </b-row>
       </b-container>
@@ -48,40 +42,6 @@ export default {
   },
   data() {
     return {
-      valueOfCards: [
-        {
-          cost: 1,
-          quantity: 1
-        },
-        {
-          cost: 2,
-          quantity: 3
-        },
-        {
-          cost: 3,
-          quantity: 0
-        },
-        {
-          cost: 4,
-          quantity: 1
-        },
-        {
-          cost: 5,
-          quantity: 2
-        },
-        {
-          cost: 6,
-          quantity: 1
-        },
-        {
-          cost: 7,
-          quantity: 0
-        },
-        {
-          cost: 8,
-          quantity: 2
-        }
-      ]
     };
   },
   props: {
@@ -93,21 +53,12 @@ export default {
     },
     removeDeck() {
       this.card.splice(0);
-    },
-    countValue() {
-      this.card.forEach(item => {
-        if (item.cost == 2) {
-          this.valueOfCards.cost.push("2");
-          this.valueOfCards.quantity.push(item.length);
-        }
-      });
-      console.log(this.valueOfCards);
     }
   },
   computed: {
     totalCard() {
       return this.card.length;
-    }
+    },
   }
 };
 </script>

@@ -7,20 +7,20 @@
     </b-row>
     <b-row>
       <b-col>
-          <sidebarDeck :card="card" />
-          <Card @addCardEvent="addCard($event)"/>
-        </b-col>
+        <sidebarDeck :card="card"/>
+        <Card @addCardEvent="addCard($event)" />
+      </b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
-import Card from './card.vue'
-import sidebarDeck from './sidebarDeck.vue'
-import ButtonAndFilters from './ButtonAndFilters.vue'
+import Card from "./card.vue";
+import sidebarDeck from "./sidebarDeck.vue";
+import ButtonAndFilters from "./ButtonAndFilters.vue";
 
 export default {
-  name:'card',
+  name: "card",
   components: {
     Card,
     sidebarDeck,
@@ -29,7 +29,6 @@ export default {
   data() {
     return {
       card: [],
-      counterCost3: Number,
     };
   },
   methods: {
@@ -37,11 +36,14 @@ export default {
       if (this.card.length < 10) {
         this.card.push(card);
       } else {
-         alert('Le Deck Est Plein !')
+        alert("Le Deck Est Plein !");
       }
     },
-  }
+  },
 };
 </script>
 <style scoped>
+.test {
+  color: white;
+}
 </style>

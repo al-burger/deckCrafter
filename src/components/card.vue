@@ -30,7 +30,6 @@ export default {
   },
   data() {
     return {
-      counterCost3: 0,
       cards: [{
         title:'Paysan',
         cost: '1',
@@ -116,12 +115,6 @@ export default {
   methods: {
     addCard(card){
       this.$emit('addCardEvent', card);
-      if(card.cost == 3) {
-        this.addCounterCost();
-      }
-    },
-    addCounterCost() {
-      this.counterCost ++;
     },
   }
 };
