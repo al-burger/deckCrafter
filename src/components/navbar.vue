@@ -1,6 +1,6 @@
 <template>
     <div>
-      <b-navbar toggleable="lg" type="dark" variant="">
+      <b-navbar toggleable="lg" type="" variant="">
         <b-container>
             <b-navbar-brand href="#">DeckCrafter</b-navbar-brand>
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -44,7 +44,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .navbar {
-    background-color:$main-blue
+    background-color:$main-blue;
+    padding: 0;
 }
 .navbar_button {
     background-color:$main-yellow;
@@ -57,7 +58,18 @@ export default {
     }
 }
 .nav-item .nav-link {
-    color:#0c0032;
-    opacity:1
+    color:white;
+    opacity:1;
+    padding:1.5em;
+    border-bottom: 2px solid transparent;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: 700;
+    transition: 0.2s ease;
+
+    &:hover {
+      border-bottom-color: $secondary-yellow;
+      color: $main-yellow;
+    }
 }
 </style>

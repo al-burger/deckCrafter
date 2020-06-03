@@ -1,6 +1,6 @@
 
 <template>
-    <div v-if="cards.length">
+    <div v-if="cards.length" class="card-container">
       <b-row>
           <b-col cols="3" :key="card.title" class="DC-card" v-for="card in cards">
             <b-card :header="card.title | toUpperCase"  align="center">
@@ -123,6 +123,10 @@ export default {
 
 .DC-card {
   padding:1em
+}
+
+.card-container {
+  padding:1em 0 3em
 }
 
 .card {

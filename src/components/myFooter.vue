@@ -10,7 +10,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .myfooter {
-  margin-top:4em;
     width:100%;
     height:50px;
     background-color:$secondary-yellow;
