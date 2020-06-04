@@ -132,10 +132,20 @@ export default {
 .card {
     border:1px solid $main-yellow;
     cursor:pointer;
+     transition: all .2s ease-in-out; 
+         font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 0.75em;
+
+     &:hover {
+       transform: scale(1.05);
+       box-shadow: rgba($main-yellow, 0.4) 0px 0px 5px 3px;
+     }
 
   .card-header {
     background-color:$main-yellow;
     color:$main-grey;
+
   }
 
   .card-body {

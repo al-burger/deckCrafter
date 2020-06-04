@@ -28,7 +28,8 @@ export default {
 #app {
   background-color: $main-grey;
   .main {
-    display:flex
+    display:flex;
+    height: calc(100vh - 100px);
   }
 }
 </style>

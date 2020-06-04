@@ -43,7 +43,4 @@ export default {
 };
 </script>
 <style scoped>
-.test {
-  color: white;
-}
 </style>
