@@ -39,6 +39,7 @@ export default {
   background-color: $main-blue;
   padding: 0;
   border-bottom:1px solid $main-yellow;
+  box-shadow: rgb(20, 11, 36) 0px 2px 6px 0px;
 }
 .navbar-brand {
   font-weight: 700;
