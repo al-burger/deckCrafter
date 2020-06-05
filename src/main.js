@@ -1,3 +1,5 @@
+ // window._ = require('lodash');
+
 import Vue from 'vue'
 import App from './App.vue'
 import 'es6-promise/auto'

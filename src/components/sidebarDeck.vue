@@ -9,7 +9,7 @@
                 <b-list-group-item
                   class="d-flex justify-content-between align-items-center sideDeck-card"
                   v-for="(card, index) in card"
-                  :key="card.title"
+                  :key="card.title+index"
                 >
                   <span class="sideDeck-card_title">{{card.title}}</span>
                   <span>{{card.attack}}</span>
