@@ -7,9 +7,8 @@
     </b-row>
     <b-row>
       <b-col>
-        <sidebarDeck :card="card"/>
+        <sidebarDeck :card="card" :totalCostCard="totalCostCard"/>
         <Card @addCardEvent="addCard($event)" />
-        <div style="color:white">arrayCostCard : {{arrayCostCard}}</div>
       </b-col>
     </b-row>
   </b-container>
@@ -30,19 +29,19 @@ export default {
   data() {
     return {
       card: [],
-      arrayCostCard: []
+      totalCostCard:[],
     };
   },
   methods: {
-    addCard(card, totalCostCard) {
-      console.log('card', card);
-      console.log('totalCostCard', totalCostCard)
+    addCard(payload) {
+      console.log('card', payload.card);
+      console.log('totalCostCard', payload.totalCostCard)
       if (this.card.length < 10) {
-        this.card.push(card);
+        this.card.push(payload.card);
+        this.totalCostCard = payload.totalCostCard;
       } else {
         alert("Le Deck Est Plein !");
       }
-      this.arrayCostCard = this.totalCostCard
     },
   },
 };

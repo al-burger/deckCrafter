@@ -15,7 +15,7 @@
                   <span>{{card.attack}}</span>
                   <span>{{card.defense}}</span>
                   <b-badge variant="primary" pill>{{ card.cost }}</b-badge>
-                  <b-button @click="removeCard(index)">Supprimer</b-button>
+                  <b-button @click="[removeCard(index), decrementTotalCostCard(card)]">Supprimer</b-button>
                 </b-list-group-item>
               </transition-group>
             </b-list-group>
@@ -25,7 +25,7 @@
             >{{ totalCard }} / 10</div>
             <b-button v-if="this.card.length > 0" @click="removeDeck()">Supprimer tout</b-button>
             <div v-if="this.card.length === 10">Le deck est plein !</div>
-            <deckProgressBar :card="card" />
+            <deckProgressBar :totalCostCard="totalCostCard" />
           </b-col>
         </b-row>
       </b-container>
@@ -45,9 +45,13 @@ export default {
     };
   },
   props: {
-    card: Array
+    card: Array,
+    totalCostCard: Array,
   },
   methods: {
+    decrementTotalCostCard(card) {
+      this.$set(this.totalCostCard, card.cost, this.totalCostCard[card.cost] - 1);
+    },
     removeCard(index) {
       this.card.splice(index, 1);
     },
