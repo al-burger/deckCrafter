@@ -1,5 +1,6 @@
 <template>
-  <sidebar-menu :menu="menu" collapsed="true" width="200px" />
+  <sidebar-menu :menu="menu" :collapsed="true" :isCollapsed="true" width="200px">
+  </sidebar-menu>
 </template>
 
 <script>
@@ -13,7 +14,6 @@ export default {
         {
           header: false,
           hiddenOnCollapse: true,
-          hidden: true
         },
         {
           href: "/",
