@@ -112,7 +112,7 @@ export default {
           defense: "3"
         }
       ],
-      totalCostCard: [0, 0, 0, 0, 0, 0, 0, 0],
+      totalCostCard: [0, 0, 0, 0, 0, 0, 0, 0, 0]
     };
   },
   filters: {
@@ -128,9 +128,21 @@ export default {
     },
     incrementTotalCostCard(card) {
       if (card.cost == 1) {
-        this.$set(this.totalCostCard, 1, this.totalCostCard[1] + 1)
-      } else {
-        console.log("pas cool");
+        this.$set(this.totalCostCard, 1, this.totalCostCard[1] + 1);
+      } else if (card.cost == 2) {
+        this.$set(this.totalCostCard, 2, this.totalCostCard[2] + 1);
+      } else if (card.cost == 3) {
+        this.$set(this.totalCostCard, 3, this.totalCostCard[3] + 1);
+      } else if (card.cost == 4) {
+        this.$set(this.totalCostCard, 4, this.totalCostCard[4] + 1);
+      } else if (card.cost == 5) {
+        this.$set(this.totalCostCard, 5, this.totalCostCard[5] + 1);
+      } else if (card.cost == 6) {
+        this.$set(this.totalCostCard, 6, this.totalCostCard[6] + 1);
+      } else if (card.cost == 7) {
+        this.$set(this.totalCostCard, 7, this.totalCostCard[7] + 1);
+      } else if (card.cost == 8) {
+        this.$set(this.totalCostCard, 8, this.totalCostCard[8] + 1);
       }
     }
   }
