@@ -9,6 +9,7 @@
       <b-col>
         <sidebarDeck :card="card"/>
         <Card @addCardEvent="addCard($event)" />
+        <div style="color:white">arrayCostCard : {{arrayCostCard}}</div>
       </b-col>
     </b-row>
   </b-container>
@@ -29,15 +30,19 @@ export default {
   data() {
     return {
       card: [],
+      arrayCostCard: []
     };
   },
   methods: {
-    addCard(card) {
+    addCard(card, totalCostCard) {
+      console.log('card', card);
+      console.log('totalCostCard', totalCostCard)
       if (this.card.length < 10) {
         this.card.push(card);
       } else {
         alert("Le Deck Est Plein !");
       }
+      this.arrayCostCard = this.totalCostCard
     },
   },
 };

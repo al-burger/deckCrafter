@@ -2,14 +2,13 @@
 <template>
   <div>
     <div style="color:white">{{totalCostCard}}</div>
-    <div style="color:white">{{totalCostCard[1]}}</div>
     <div v-if="cards.length" class="card-container">
       <b-row>
         <b-col cols="3" :key="card.title" class="DC-card" v-for="card in cards">
           <b-card :header="card.title | toUpperCase" align="center">
             <div class="overlay">
               <div class="addToDeck">
-                <b-button @click="addCard(card);incrementTotalCostCard(card)">Ajouter au deck</b-button>
+                <b-button @click="addCard([card, totalCostCard]);incrementTotalCostCard(card)">Ajouter au deck</b-button>
               </div>
             </div>
             <b-card-text>COÛT : {{ card.cost }}</b-card-text>
@@ -123,8 +122,9 @@ export default {
     }
   },
   methods: {
-    addCard(card) {
-      this.$emit("addCardEvent", card);
+    addCard(card, totalCostCard) {
+      this.$emit("addCardEvent", card, totalCostCard);
+
     },
     incrementTotalCostCard(card) {
       if (card.cost == 1) {

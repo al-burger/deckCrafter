@@ -33,7 +33,7 @@
                 ],
 			};
         },
-        watch: {
+        /**watch: {
             localCards:function() {
                 this.bars.forEach((value, key) => {
                     this.localCards.forEach((card)=>{
@@ -46,7 +46,7 @@
 					})
                 });
             }
-        }
+        }*/
     }
     ;
 </script>
