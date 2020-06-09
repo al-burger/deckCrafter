@@ -34,8 +34,6 @@ export default {
   },
   methods: {
     addCard(payload) {
-      console.log('card', payload.card);
-      console.log('totalCostCard', payload.totalCostCard)
       if (this.card.length < 10) {
         this.card.push(payload.card);
         this.totalCostCard = payload.totalCostCard;
